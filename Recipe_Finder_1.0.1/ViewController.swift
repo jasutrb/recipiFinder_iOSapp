@@ -9,18 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var keyword1 : String? = ""
+    var keyword1 : String! = ""
 
     @IBOutlet weak var ingredient: UILabel!
     @IBOutlet weak var ingredient1: UITextField!
     @IBOutlet weak var searchButton: UIButton!
     @IBAction func searchRecipi(_ sender: UIButton) {
-        //labelTest.text = "検索！"
-        //let url = NSURL(string: "http://google.com")
-        //if UIApplication.shared.canOpenURL(url! as URL){
-        //    UIApplication.shared.openURL(url! as URL)
-        //}
-        UIApplication.shared.open(URL(string: "https://google.co.jp/search?q=banana")!, options: [:], completionHandler: nil)
+        let url : String! = "https://google.co.jp/search?q="
+        UIApplication.shared.open(URL(string : url + keyword1)!, options: [:], completionHandler: nil)
         sender.setTitle("検索！", for: .normal)
     }
     
