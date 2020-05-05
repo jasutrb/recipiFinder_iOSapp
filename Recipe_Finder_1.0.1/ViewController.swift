@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     var keywordDi : String! = ""
     
     
+    @IBOutlet weak var backGround: UIImageView!
     @IBOutlet weak var ingredient: UILabel!
     @IBOutlet weak var ingredient1: UITextField!
     @IBOutlet weak var ingredient2: UITextField!
@@ -83,9 +84,9 @@ class ViewController: UIViewController {
         keywordFormat( ingredient2, str: "2")
         keywordFormat( ingredient3, str: "3")
         
-        countryStyle.text = "test"
+        countryStyle.text = "どんな料理にしますか？"
         
-        dishStyle.text = "test2"
+        dishStyle.text = "何を作りますか？"
         
         searchButton.setTitle("準備OK! 検索！", for: .normal)
     }
