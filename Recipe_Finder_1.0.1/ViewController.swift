@@ -25,7 +25,9 @@ class ViewController: UIViewController {
     //lab countrystyle JP EU CH ANY styleoption
     @IBOutlet weak var countryStyle: UILabel!
     @IBOutlet weak var styleOption: UISegmentedControl!
+   
     @IBAction func styleOption(_ sender: UISegmentedControl) {
+       
         switch sender.selectedSegmentIndex{
         case 0:
             keywordFu = "和風"
@@ -34,9 +36,9 @@ class ViewController: UIViewController {
         case 2:
             keywordFu = "中華風"
         case 3:
-            keywordFu = ""
+            keywordFu = "料理"
         default:
-            keywordFu = ""
+            keywordFu = "料理"
         }
     }
     //lab dishstyle main soup snack any type
@@ -56,6 +58,7 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var cookimage: UIImageView!
     //検索機能
     @IBOutlet weak var searchButton: UIButton!
     @IBAction func searchRecipi(_ sender: UIButton) {
@@ -73,6 +76,7 @@ class ViewController: UIViewController {
         let urlBase : String! = "https://google.co.jp/search?q="
         var url : String!
         url = urlBase + perKey1 + "+" + perKey2 + "+" + perKey3 + "+" + perKeyFu + "+" + perKeyDi
+        
         UIApplication.shared.open(URL(string : url)!, options: [:], completionHandler: nil)
         sender.setTitle("検索！", for: .normal)
     }
@@ -88,7 +92,7 @@ class ViewController: UIViewController {
         
         dishStyle.text = "何を作りますか？"
         
-        searchButton.setTitle("準備OK! 検索！", for: .normal)
+        searchButton.setTitle("検索！", for: .normal)
     }
     
     //検索ワード入力フォーマットのメソッド
